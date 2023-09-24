@@ -62,7 +62,7 @@ func TestNullable_MarshalJSON_int(t *testing.T) {
 		{
 			Value: nul.Something(3),
 		},
-vv		{
+		{
 			Value: nul.Something(4),
 		},
 		{
