@@ -72,7 +72,7 @@ func TestNullable_WhenNothing(t *testing.T) {
 	}
 }
 
-func TestNullable_WhenNull_something(t *testing.T) {
+func TestNullable_WhenNothing_null(t *testing.T) {
 
 
 	tests := []struct{
