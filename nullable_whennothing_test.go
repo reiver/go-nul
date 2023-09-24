@@ -6,7 +6,7 @@ import (
 	"sourcecode.social/reiver/go-nul"
 )
 
-func TestNullable_WhenNothing(t *testing.T) {
+func TestNullable_WhenNothing_nothing(t *testing.T) {
 
 
 	tests := []struct{
