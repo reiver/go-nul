@@ -72,6 +72,72 @@ func TestNullable_WhenNothing(t *testing.T) {
 	}
 }
 
+func TestNullable_WhenNull_something(t *testing.T) {
+
+
+	tests := []struct{
+		Nullable interface{WhenNothing(func())}
+	}{
+		{
+			Nullable: nul.Null[string](),
+		},
+
+
+
+		{
+			Nullable: nul.Null[int](),
+		},
+		{
+			Nullable: nul.Null[int8](),
+		},
+		{
+			Nullable: nul.Null[int16](),
+		},
+		{
+			Nullable: nul.Null[int32](),
+		},
+		{
+			Nullable: nul.Null[int64](),
+		},
+
+
+
+		{
+			Nullable: nul.Null[uint](),
+		},
+		{
+			Nullable: nul.Null[uint8](),
+		},
+		{
+			Nullable: nul.Null[uint16](),
+		},
+		{
+			Nullable: nul.Null[uint32](),
+		},
+		{
+			Nullable: nul.Null[uint64](),
+		},
+	}
+
+	for testNumber, test := range tests {
+
+		var worked bool = false
+
+		test.Nullable.WhenNothing(func(){
+
+			worked = true
+		})
+
+		if worked {
+			t.Errorf("For test #%d, the call to the method worked, but it should not have.", testNumber)
+			t.Logf("WORKED: %t", worked)
+			t.Logf("NULLABLE: (%T) %#v", test.Nullable, test.Nullable)
+	//////////////// CONTINUE
+			continue
+		}
+	}
+}
+
 func TestNullable_WhenNothing_something(t *testing.T) {
 
 
