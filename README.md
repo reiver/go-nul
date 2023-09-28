@@ -73,7 +73,7 @@ To import package **nul** use `import` code like the follownig:
 import "sourcecode.social/reiver/go-nul"
 ```
 
-# Installation
+## Installation
 
 To install package **nul** do the following:
 ```
