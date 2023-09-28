@@ -71,6 +71,7 @@ if found {
 To import package **nul** use `import` code like the follownig:
 ```
 import "sourcecode.social/reiver/go-nul"
+```
 
 # Installation
 
