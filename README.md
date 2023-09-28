@@ -66,3 +66,19 @@ if found {
 	fmt.Println("either nothing or null")
 }
 ```
+## Import
+
+To import package **nul** use `import` code like the follownig:
+```
+import "sourcecode.social/reiver/go-nul"
+
+# Installation
+
+To install package **nul** do the following:
+```
+GOPROXY=direct https://sourcecode.social/reiver/go-nul
+```
+
+## Author
+
+Package **nul** was written by [Charles Iliya Krempeaux](http://changelog.ca)
