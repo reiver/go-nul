@@ -77,7 +77,7 @@ import "sourcecode.social/reiver/go-nul"
 
 To install package **nul** do the following:
 ```
-GOPROXY=direct https://sourcecode.social/reiver/go-nul
+GOPROXY=direct go get https://sourcecode.social/reiver/go-nul
 ```
 
 ## Author
