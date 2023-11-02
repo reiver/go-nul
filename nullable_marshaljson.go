@@ -19,7 +19,7 @@ func (receiver Nullable[T]) MarshalJSON() ([]byte, error) {
 	}
 
 	if receiver.isnothing() {
-		return nil, erorr.Errorf("nul: cannot marshal opt.Nothing[%T]() into JSON", receiver.value)
+		return nil, erorr.Errorf("nul: cannot marshal nul.Nothing[%T]() into JSON", receiver.value)
 	}
 
 	if receiver.isnull {
