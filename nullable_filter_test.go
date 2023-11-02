@@ -6,7 +6,7 @@ import (
 	"sourcecode.social/reiver/go-nul"
 )
 
-func TestOptional_Filter_int(t *testing.T) {
+func TestNullable_Filter_int(t *testing.T) {
 
 	tests := []struct{
 		Nullable nul.Nullable[int]

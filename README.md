@@ -18,7 +18,7 @@ import "sourcecode.social/reiver/go-nul"
 
 //
 
-var op nul.Optional[string] // the default value is nothing.
+var op nul.Nullable[string] // the default value is nothing.
 
 // ...
 

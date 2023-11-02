@@ -6,7 +6,7 @@ import (
 	"sourcecode.social/reiver/go-nul"
 )
 
-func TestOptional_Get_string(t *testing.T) {
+func TestNullable_Get_string(t *testing.T) {
 
 	tests := []struct{
 		Nullable nul.Nullable[string]
@@ -77,7 +77,7 @@ func TestOptional_Get_string(t *testing.T) {
 	}
 }
 
-func TestOptional_Get_int8(t *testing.T) {
+func TestNullable_Get_int8(t *testing.T) {
 
 	tests := []struct{
 		Nullable nul.Nullable[int8]
@@ -303,7 +303,7 @@ func TestOptional_Get_int8(t *testing.T) {
 	}
 }
 
-func TestOptional_Get_uint8(t *testing.T) {
+func TestNullable_Get_uint8(t *testing.T) {
 
 	tests := []struct{
 		Nullable nul.Nullable[uint8]
