@@ -6,11 +6,17 @@ import (
 	"sourcecode.social/reiver/go-erorr"
 )
 
+const errNilReceiver = erorr.Error("nul: nil receiver")
+
 var _ json.Unmarshaler = new(Nullable[bool])
 var _ json.Unmarshaler = new(Nullable[string])
 
 // UnmarshalJSON makes it so json.Unmarshaler is implemented.
 func (receiver *Nullable[T]) UnmarshalJSON(data []byte) error {
+	if nil == receiver {
+		return errNilReceiver
+	}
+
 	switch interface{}(receiver.value).(type) {
 	case bool, string,json.Unmarshaler:
 		// these are OK.
