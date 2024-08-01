@@ -82,4 +82,4 @@ GOPROXY=direct go get https://github.com/reiver/go-nul
 
 ## Author
 
-Package **nul** was written by [Charles Iliya Krempeaux](http://changelog.ca)
+Package **nul** was written by [Charles Iliya Krempeaux](http://reiver.link)
