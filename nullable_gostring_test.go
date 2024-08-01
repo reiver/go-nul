@@ -5,7 +5,7 @@ import (
 
 	"fmt"
 
-	"sourcecode.social/reiver/go-nul"
+	"github.com/reiver/go-nul"
 )
 
 func TestNullable_GoString(t *testing.T) {

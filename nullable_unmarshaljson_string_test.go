@@ -5,7 +5,7 @@ import (
 
 	"encoding/json"
 
-	"sourcecode.social/reiver/go-nul"
+	"github.com/reiver/go-nul"
 )
 
 func TestNullable_UnmarshalJSON_string(t *testing.T) {

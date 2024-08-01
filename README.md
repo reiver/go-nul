@@ -6,15 +6,15 @@ In other programming languages, an **optional-type** might be known as: a **opti
 
 ## Documention
 
-Online documentation, which includes examples, can be found at: http://godoc.org/sourcecode.social/reiver/go-nul
+Online documentation, which includes examples, can be found at: http://godoc.org/github.com/reiver/go-nul
 
-[![GoDoc](https://godoc.org/sourcecode.social/reiver/go-nul?status.svg)](https://godoc.org/sourcecode.social/reiver/go-nul)
+[![GoDoc](https://godoc.org/github.com/reiver/go-nul?status.svg)](https://godoc.org/github.com/reiver/go-nul)
 
 ## Examples
 
 Here is an example **nullable** **optional-type** that can hold a string:
 ```go
-import "sourcecode.social/reiver/go-nul"
+import "github.com/reiver/go-nul"
 
 //
 
@@ -70,14 +70,14 @@ if found {
 
 To import package **nul** use `import` code like the follownig:
 ```
-import "sourcecode.social/reiver/go-nul"
+import "github.com/reiver/go-nul"
 ```
 
 ## Installation
 
 To install package **nul** do the following:
 ```
-GOPROXY=direct go get https://sourcecode.social/reiver/go-nul
+GOPROXY=direct go get https://github.com/reiver/go-nul
 ```
 
 ## Author

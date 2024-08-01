@@ -1,7 +1,7 @@
 package nul_test
 
 import (
-	"sourcecode.social/reiver/go-nul"
+	"github.com/reiver/go-nul"
 
 	"testing"
 )

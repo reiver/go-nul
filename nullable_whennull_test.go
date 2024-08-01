@@ -3,7 +3,7 @@ package nul_test
 import (
 	"testing"
 
-	"sourcecode.social/reiver/go-nul"
+	"github.com/reiver/go-nul"
 )
 
 func TestNullable_WhenNull_nothing(t *testing.T) {
