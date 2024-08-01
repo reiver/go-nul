@@ -3,7 +3,7 @@ package nul
 import (
 	"encoding/json"
 
-	"sourcecode.social/reiver/go-erorr"
+	"github.com/reiver/go-erorr"
 )
 
 const errNilReceiver = erorr.Error("nul: nil receiver")
