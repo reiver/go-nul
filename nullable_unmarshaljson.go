@@ -18,7 +18,7 @@ func (receiver *Nullable[T]) UnmarshalJSON(data []byte) error {
 	}
 
 	switch interface{}(receiver.value).(type) {
-	case bool, string,json.Unmarshaler:
+	case bool,string,json.Unmarshaler:
 		// these are OK.
 	default:
 		return erorr.Errorf("nul: cannot unmarshal into something of type %T from JSON because parameterized type is ‘%T’ rather than ‘bool’, ‘string’, or ‘json.Unmarshaler’", receiver, receiver.value)
