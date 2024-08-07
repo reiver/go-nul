@@ -2,6 +2,7 @@ package nul
 
 import (
 	"encoding/json"
+	"reflect"
 
 	"github.com/reiver/go-erorr"
 )
@@ -15,7 +16,9 @@ func (receiver Nullable[T]) MarshalJSON() ([]byte, error) {
 	case bool, string,json.Marshaler:
 		// these are OK.
 	default:
-		return nil, erorr.Errorf("nul: cannot marshal something of type %T into JSON because parameterized type is ‘%T’ rather than ‘bool’, ‘string’, or ‘json.Marshaler’", receiver, receiver.value)
+		if reflect.Struct != reflect.TypeOf(receiver.value).Kind() {
+			return nil, erorr.Errorf("nul: cannot marshal something of type %T into JSON because parameterized type is ‘%T’ rather than ‘bool’, ‘string’, or ‘json.Marshaler’", receiver, receiver.value)
+		}
 	}
 
 	if receiver.isnothing() {

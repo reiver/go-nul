@@ -2,6 +2,7 @@ package nul
 
 import (
 	"encoding/json"
+	"reflect"
 
 	"github.com/reiver/go-erorr"
 )
@@ -21,7 +22,9 @@ func (receiver *Nullable[T]) UnmarshalJSON(data []byte) error {
 	case bool,string,json.Unmarshaler:
 		// these are OK.
 	default:
-		return erorr.Errorf("nul: cannot unmarshal into something of type %T from JSON because parameterized type is ‘%T’ rather than ‘bool’, ‘string’, or ‘json.Unmarshaler’", receiver, receiver.value)
+		if reflect.Struct != reflect.TypeOf(receiver.value).Kind() {
+			return erorr.Errorf("nul: cannot unmarshal into something of type %T from JSON because parameterized type is ‘%T’ rather than ‘bool’, ‘string’, or ‘json.Unmarshaler’", receiver, receiver.value)
+		}
 	}
 
 	if 4 == len(data) && 'n' == data[0] && 'u' == data[1] && 'l' == data[2] && 'l' == data[3] {
