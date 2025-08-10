@@ -77,7 +77,7 @@ import "github.com/reiver/go-nul"
 
 To install package **nul** do the following:
 ```
-GOPROXY=direct go get https://github.com/reiver/go-nul
+GOPROXY=direct go get github.com/reiver/go-nul
 ```
 
 ## Author
