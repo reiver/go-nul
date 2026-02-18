@@ -63,6 +63,14 @@ func (receiver Nullable[T]) GoString() string {
 	return fmt.Sprintf("nul.Something[%T](%#v)", receiver.value, receiver.value)
 }
 
+func (receiver Nullable[T]) IsNothing() bool {
+	return !(receiver.something)
+}
+
+func (receiver Nullable[T]) IsNull() bool {
+	return receiver.isnull
+}
+
 func (receiver Nullable[T]) WhenNothing(fn func()) {
 	if receiver.isnothing() {
 		fn()
