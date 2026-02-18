@@ -48,8 +48,50 @@ func (receiver Nullable[T]) Filter(fn func(T)bool) Nullable[T] {
 	return receiver
 }
 
+// Get returns the value inside of the nullable-optional-type if it is holding something.
+//
+// Example usage:
+//
+//	var nl nul.Nullable[string]
+//	
+//	// ...
+//	
+//	value, found := nl.Get()
+//	
+//	if found {
+//		fmt.Println("VALUE:", value)
+//	} else {
+//		fmt.Println("nothing")
+//	}
 func (receiver Nullable[T]) Get() (T, bool) {
+	if receiver.isnull {
+		var nada T
+		return nada, false
+	}
+
 	return receiver.value, receiver.something
+}
+
+// GetElse returns the value inside of the nullable-optional-type if it is holding something.
+// Else it returns the alternstive value passed as a parameter.
+// Example usage:
+//
+//	var nl nul.Nullable[string]
+//	
+//	// ...
+//	
+//	value := nl.GetElse(alternative)
+//	
+//	fmt.Println("VALUE:", value)
+func (receiver Nullable[T]) GetElse(alternative T) T {
+	if receiver.IsNothing() {
+		return alternative
+	}
+	if receiver.IsNull() {
+		return alternative
+	}
+
+	return receiver.value
 }
 
 func (receiver Nullable[T]) GoString() string {
