@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"github.com/reiver/go-erorr"
+	"codeberg.org/reiver/go-erorr"
 )
 
 const errNilReceiver = erorr.Error("nul: nil receiver")

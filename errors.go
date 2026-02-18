@@ -1,9 +1,9 @@
 package nul
 
 import (
-	"github.com/reiver/go-erorr"
+	"codeberg.org/reiver/go-erorr"
 )
 
 const (
-	errBadReflection = erorr.Error("opt: bad reflection")
+	errBadReflection = erorr.Error("nul: bad reflection")
 )
