@@ -115,6 +115,10 @@ func (receiver Nullable[T]) IsNull() bool {
 	return receiver.isnull
 }
 
+func (receiver Nullable[T]) IsSomething() bool {
+	return receiver.something
+}
+
 func (receiver Nullable[T]) Optional() opt.Optional[T] {
 	switch {
 	case receiver.isnothing():
