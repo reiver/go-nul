@@ -2,6 +2,8 @@ package nul
 
 import (
 	"fmt"
+
+	"github.com/reiver/go-opt"
 )
 
 type Nullable[T any] struct {
@@ -111,6 +113,17 @@ func (receiver Nullable[T]) IsNothing() bool {
 
 func (receiver Nullable[T]) IsNull() bool {
 	return receiver.isnull
+}
+
+func (receiver Nullable[T]) Optional() opt.Optional[T] {
+	switch {
+	case receiver.isnothing():
+		return opt.Nothing[T]()
+	case receiver.isnull:
+		return opt.Nothing[T]()
+	default:
+		return opt.Something[T](receiver.value)
+	}
 }
 
 func (receiver Nullable[T]) WhenNothing(fn func()) {
