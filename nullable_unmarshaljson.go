@@ -18,13 +18,39 @@ func (receiver *Nullable[T]) UnmarshalJSON(data []byte) error {
 		return errNilReceiver
 	}
 
-	switch interface{}(receiver.value).(type) {
-	case bool,string,json.Unmarshaler:
-		// these are OK.
-	default:
-		if reflect.Struct != reflect.TypeOf(receiver.value).Kind() {
-			return erorr.Errorf("nul: cannot unmarshal into something of type %T from JSON because parameterized type is ‘%T’ rather than ‘bool’, ‘string’, or ‘json.Unmarshaler’", receiver, receiver.value)
+	var ok bool
+	{
+		switch interface{}(receiver.value).(type) {
+		case
+			bool,
+			int,
+			int8,
+			int16,
+			int32,
+			int64,
+			string,
+			uint,
+			uint8,
+			uint16,
+			uint32,
+			uint64,
+			json.Unmarshaler:
+			ok = true
 		}
+
+                // Also check if *T implements json.Unmarshaler (pointer receiver methods).
+                var ptr interface{} = &receiver.value
+                if _, casted := ptr.(json.Unmarshaler); casted {
+                        ok = true
+                }
+
+		if reflect.Struct == reflect.TypeOf(receiver.value).Kind() {
+			ok = true
+		}
+	}
+
+	if !ok {
+		return erorr.Errorf("nul: cannot unmarshal into something of type %T from JSON because parameterized type is ‘%T’", receiver, receiver.value)
 	}
 
 	if 4 == len(data) && 'n' == data[0] && 'u' == data[1] && 'l' == data[2] && 'l' == data[3] {
